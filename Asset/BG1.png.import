@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/__Bandit02_JumpLeft_002.png-fc1d96570400f861cb4df8df6540ae0b.stex"
+path="res://.import/BG1.png-ad9366d57102b91d97308466b40fea8c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/Player/_02/05-JumpUp/__Bandit02_JumpLeft_002.png"
-dest_files=[ "res://.import/__Bandit02_JumpLeft_002.png-fc1d96570400f861cb4df8df6540ae0b.stex" ]
+source_file="res://Asset/BG1.png"
+dest_files=[ "res://.import/BG1.png-ad9366d57102b91d97308466b40fea8c.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0
