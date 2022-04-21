@@ -1,9 +1,8 @@
 extends KinematicBody2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
+# Movement
 export var speed = Vector2(300.0, 1000.0)
 export var gravity = 300.0
 var velocity = Vector2.ZERO
@@ -12,13 +11,33 @@ export var right_strenght = 100.0
 export var left_strenght = -100.0
 export var jump_strenght = -100.0
 onready var _animated_sprite = $AnimatedSprite
-# Called when the node enters the scene tree for the first time.
 
-var money = 0
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Money 
+export var money = 0
+var unit = 0
+var time = 10
+signal money_update(money)
+var _timer = null
+
+
+
+
+func _ready():
+	
+	moreMoney(unit)
+	pass
+	
 func _physics_process(delta):
 	
+	getDirection(delta)
+	pass
+
+func setSprite(description):
+	
+	_animated_sprite.play(description)
+	
+func getDirection(delta):
 	var description = ""
 	velocity.y += gravity*delta 
 	velocity.x = 0.0
@@ -47,17 +66,27 @@ func _physics_process(delta):
 			description = "jump"
 		elif is_on_floor(): 
 			velocity.y = 0.0
-		
 			
-		
 	move_and_slide(velocity, Vector2.UP)
 	setSprite(description)
-	pass
 
-func setSprite(description):
+func moreMoney(unit):
 	
-	_animated_sprite.play(description)
+	_timer = Timer.new()
+	add_child(_timer)
+	_timer.connect("timeout", self, "setMoney")
+	_timer.set_wait_time(time)
+	_timer.set_one_shot(false) # Make sure it loops
+	_timer.start()
+
+	emit_signal("money_update",money)
 	
+func setMoney():
+	 money = money + unit
+	
+
+	
+
 		
 		
 	

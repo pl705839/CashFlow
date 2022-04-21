@@ -5,8 +5,12 @@ signal close_action
 signal enter_garage
 var action = ""
 
+onready var Player = get_node("Player")
+
 func _process(delta):
 
+
+	print(Player.money)
 	if Input.is_action_pressed("action"):
 		if action == "enter_hall":
 			print("entré")
