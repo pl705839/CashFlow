@@ -15,8 +15,8 @@ onready var _animated_sprite = $AnimatedSprite
 
 # Money 
 export var money = 0
-var unit = 0
-var time = 10
+var unit = 5
+var time = 2
 signal money_update(money)
 var _timer = null
 
@@ -79,10 +79,11 @@ func moreMoney(unit):
 	_timer.set_one_shot(false) # Make sure it loops
 	_timer.start()
 
-	emit_signal("money_update",money)
+	
 	
 func setMoney():
 	 money = money + unit
+	 emit_signal("money_update",money)
 	
 
 	

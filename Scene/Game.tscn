@@ -60,13 +60,13 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="money_cents0" type="Sprite" parent="UI/ui_money"]
-position = Vector2( 953, 437 )
+[node name="money_unit0" type="Sprite" parent="UI/ui_money"]
+position = Vector2( 955, 437 )
 scale = Vector2( 1.125, 1.125 )
 texture = SubResource( 1 )
 
 [node name="money_unit1" type="Sprite" parent="UI/ui_money"]
-position = Vector2( 937.996, 437.004 )
+position = Vector2( 938.996, 437.004 )
 scale = Vector2( 1.12525, 1.12525 )
 texture = SubResource( 2 )
 
@@ -109,3 +109,4 @@ texture = SubResource( 7 )
 [connection signal="enter_garage" from="Lvl1" to="UI" method="_on_Lvl1_enter_garage"]
 [connection signal="enter_hall" from="Lvl1" to="UI" method="_on_Lvl1_enter_hall"]
 [connection signal="money_update" from="Lvl1/Player" to="UI" method="_on_Player_money_update"]
+[connection signal="money_update" from="Lvl1/Player" to="UI/ui_money" method="_on_Player_money_update"]
