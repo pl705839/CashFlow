@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Asset/BG.png" type="Texture" id=1]
 [ext_resource path="res://Script/Lvl1.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Asset/items/bench.png" type="Texture" id=5]
 [ext_resource path="res://Asset/items/lamp.png" type="Texture" id=6]
 [ext_resource path="res://Asset/items/lampClinc.png" type="Texture" id=7]
+[ext_resource path="res://Asset/items/panel.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 366.422, 10 )
@@ -148,6 +149,11 @@ scale = Vector2( 0.29, 0.29 )
 texture = ExtResource( 3 )
 offset = Vector2( 6.89661, -3.44824 )
 
+[node name="panel" type="Sprite" parent="items-static"]
+position = Vector2( 804, 530 )
+scale = Vector2( 1.71875, 1.71875 )
+texture = ExtResource( 8 )
+
 [node name="items-dyna" type="Node2D" parent="."]
 
 [node name="lamp" type="AnimatedSprite" parent="items-dyna"]
@@ -161,7 +167,7 @@ playing = true
 position = Vector2( 372, 562 )
 scale = Vector2( 0.345, 0.345 )
 frames = SubResource( 24 )
-frame = 4
+frame = 5
 playing = true
 
 [connection signal="body_entered" from="Hall" to="." method="_on_Area2D_body_entered"]
