@@ -6,6 +6,7 @@ signal enter_garage
 var action = ""
 
 onready var Player = get_node("Player")
+onready var InsideSprite = get_node("Inside")
 
 func _process(delta):
 
@@ -21,11 +22,13 @@ func _process(delta):
 
 func _on_Area2D_body_entered(body):
 	emit_signal("enter_hall")
+	InsideSprite.visible = true
 	action = "enter_hall"
 
 
 func _on_Area2D_body_exited(body):
 	emit_signal("close_action")
+	InsideSprite.visible = false
 	action = ""
 	
 

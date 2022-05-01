@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Asset/BG.png" type="Texture" id=1]
 [ext_resource path="res://Script/Lvl1.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Asset/items/lamp.png" type="Texture" id=6]
 [ext_resource path="res://Asset/items/lampClinc.png" type="Texture" id=7]
 [ext_resource path="res://Asset/items/panel.png" type="Texture" id=8]
+[ext_resource path="res://Asset/inside.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 366.422, 10 )
@@ -16,10 +17,10 @@ extents = Vector2( 366.422, 10 )
 extents = Vector2( 11.5469, 216 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 14.5, 16.5 )
+extents = Vector2( 10, 16.5 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 50.5, 28.0625 )
+extents = Vector2( 50.5, 14.5002 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 7 )
@@ -85,6 +86,12 @@ position = Vector2( 512, 300 )
 scale = Vector2( 1.46286, 1.5 )
 texture = ExtResource( 1 )
 
+[node name="Inside" type="Sprite" parent="."]
+visible = false
+position = Vector2( 512.875, 300 )
+scale = Vector2( 1.46393, 1.5 )
+texture = ExtResource( 9 )
+
 [node name="Limits" type="StaticBody2D" parent="."]
 
 [node name="Stairs" type="CollisionPolygon2D" parent="Limits"]
@@ -108,13 +115,13 @@ shape = SubResource( 2 )
 [node name="Hall" type="Area2D" parent="."]
 
 [node name="Hall" type="CollisionShape2D" parent="Hall"]
-position = Vector2( 663.5, 545 )
+position = Vector2( 659, 545 )
 shape = SubResource( 5 )
 
 [node name="Garage" type="Area2D" parent="."]
 
 [node name="Garage" type="CollisionShape2D" parent="Garage"]
-position = Vector2( 471.5, 549.938 )
+position = Vector2( 471.5, 563.5 )
 shape = SubResource( 4 )
 
 [node name="items-static" type="Node2D" parent="."]
@@ -160,14 +167,14 @@ texture = ExtResource( 8 )
 position = Vector2( 900, 539 )
 scale = Vector2( 1.831, 1.831 )
 frames = SubResource( 17 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="trash" type="AnimatedSprite" parent="items-dyna"]
 position = Vector2( 372, 562 )
 scale = Vector2( 0.345, 0.345 )
 frames = SubResource( 24 )
-frame = 5
+frame = 4
 playing = true
 
 [connection signal="body_entered" from="Hall" to="." method="_on_Area2D_body_entered"]
